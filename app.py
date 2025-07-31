@@ -10,11 +10,11 @@ year = st.selectbox(
 st.write(f'SEASON {year}')
 
 driver1 = st.selectbox(
-    'Select the driver to compare:',
+    'Select Driver 1:',
     ('1','2','3','4','5','6'),
 )
 
 driver2 = st.selectbox(
-    'Select the driver to compare:',
+    'Select Driver 2:',
     ('1','2','3','4','5','6'),
 )
