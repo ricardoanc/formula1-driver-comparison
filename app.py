@@ -6,7 +6,13 @@ ff1.Cache.enable_cache('./cache')
 
 year = st.selectbox(
     'Select the racing season:',
-    ('2025','2024','2023','2022','2021','2020'),
+    (2024,
+     2023,
+     2022,
+     2021,
+     2020,
+     2019,
+     2018)
 )
 
 st.write(f'SEASON {year}')
