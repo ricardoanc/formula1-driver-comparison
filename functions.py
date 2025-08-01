@@ -6,6 +6,12 @@ ff1.Cache.enable_cache('./cache')
 
 ergast = Ergast()
 
+# Returns a list of drivers on a given season
+def get_drivers(year):
+    season_drivers = ergast.get_driver_info(season=year)['driverCode'].drop_duplicates()
+    return season_drivers
+
+
 # Returns a list of the winner of each race given the season
 def get_race_winners(year):
     schedule = ergast.get_race_schedule(season=year)

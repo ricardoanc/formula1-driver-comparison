@@ -12,14 +12,16 @@ year = st.selectbox(
 
 st.write(f'SEASON {year}')
 
+# drivers = functions.get_drivers
+
 driver1 = st.selectbox(
     'Select Driver 1:',
-    ('Select...','VER','PER','SAI','LEC','RUS','ALO'),
+    ('Select...','VER','PER','SAI','LEC','RUS','ALO')
 )
 
 driver2 = st.selectbox(
     'Select Driver 2:',
-    ('Select...','VER','PER','SAI','LEC','RUS','ALO'),
+    ('Select...','VER','PER','SAI','LEC','RUS','ALO')
 )
 
 # year, driver1, driver2 = 2022, 'VER', 'ALO'
