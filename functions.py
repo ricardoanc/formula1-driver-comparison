@@ -1,6 +1,7 @@
 import fastf1 as ff1
 import pandas as pd
 from fastf1.ergast import Ergast
+import time
 
 ff1.Cache.enable_cache('./cache')
 
@@ -9,11 +10,13 @@ ergast = Ergast()
 # Returns a list of the winner of each race given the season
 def get_race_winners(year):
     schedule = ergast.get_race_schedule(season=year)
-    
+    time.sleep(0.5)
+
     df = pd.DataFrame(columns=['Circuit', 'Winner'])
 
     for i, round_number in enumerate(schedule['round'], start=1):
         winner_code = ergast.get_driver_info(season=year, round=round_number, results_position=1)['driverCode'].iloc[0]
+        time.sleep(0.5)
         circuit = schedule[schedule['round'] == round_number]['circuitId'].iloc[0]
 
         df = pd.concat([df, pd.DataFrame([{'Circuit': circuit, 'Winner': winner_code}])], ignore_index=True)
@@ -23,11 +26,13 @@ def get_race_winners(year):
 # Returns a list of the winner of each pole position given the season
 def get_pole_winners(year):
     schedule = ergast.get_race_schedule(season=year)
+    time.sleep(0.5)
     
     df = pd.DataFrame(columns=['Circuit', 'Winner'])
 
     for i, round_number in enumerate(schedule['round'], start=1):
         pole_winner = ergast.get_driver_info(season=year, round=round_number, grid_position=1)['driverCode'].iloc[0]
+        time.sleep(0.5)
         circuit = schedule[schedule['round'] == round_number]['circuitId'].iloc[0]
 
         df = pd.concat([df, pd.DataFrame([{'Circuit': circuit, 'Winner': pole_winner}])], ignore_index=True)
