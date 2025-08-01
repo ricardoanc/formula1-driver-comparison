@@ -27,9 +27,7 @@ driver2 = st.selectbox(
 if year != 'Select...' and driver1 != 'Select...' and driver2 != 'Select...':
     st.write(f"SEASON {year}: Comparing {driver1} vs {driver2}")
 
-    time.sleep(0.5)
     winners = functions.get_race_winners(year)
-    time.sleep(0.5)
     pole_winners = functions.get_pole_winners(year)
 
     driver1_wins = functions.count_wins(driver1, winners)
@@ -41,8 +39,8 @@ if year != 'Select...' and driver1 != 'Select...' and driver2 != 'Select...':
     # print(f'{driver1} had {driver1_wins} wins in season {year}.\n While {driver2} had {driver2_wins} wins.\n\n')
     # print(f'{driver1} had {driver1_poles} pole positions in season {year}.\n While {driver2} had {driver2_poles} pole positions.')
 
-    st.write(f'{year}\n{driver1} wins: {driver1_wins}.\n{driver2} wins: {driver2_wins}.\n\n')
+    st.write(f'{driver1} wins: {driver1_wins}.\n{driver2} wins: {driver2_wins}.\n\n')
     st.write(f'{driver1} pole positions: {driver1_poles}.\n{driver2} pole positions: {driver2_poles}.')
 
 else:
-    pass
+    print('Please select all values.')
