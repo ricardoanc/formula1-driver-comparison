@@ -21,6 +21,6 @@ def get_race_winners(year):
 
 # Returns total count of wins per racer
 def count_wins(racer, winners):
-    total_wins = winners['Winner'].value_counts()[racer]
+    total_wins = (winners['Winner'] == racer).sum()
     return total_wins
 
