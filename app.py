@@ -4,24 +4,22 @@ import functions
 
 ff1.Cache.enable_cache('./cache')
 
-# year = st.selectbox(
-#     'Select the racing season:',
-#     ('2025','2024','2023','2022','2021','2020'),
-# )
+year = st.selectbox(
+    'Select the racing season:',
+    ('2025','2024','2023','2022','2021','2020'),
+)
 
-# st.write(f'SEASON {year}')
+st.write(f'SEASON {year}')
 
-# driver1 = st.selectbox(
-#     'Select Driver 1:',
-#     ('VER','PER','SAI','LEC','RUS','ALO'),
-# )
+driver1 = st.selectbox(
+    'Select Driver 1:',
+    ('VER','PER','SAI','LEC','RUS','ALO'),
+)
 
-# driver2 = st.selectbox(
-#     'Select Driver 2:',
-#     ('VER','PER','SAI','LEC','RUS','ALO'),
-# )
-
-year, driver1, driver2 = 2022, 'VER', 'SAI'
+driver2 = st.selectbox(
+    'Select Driver 2:',
+    ('VER','PER','SAI','LEC','RUS','ALO'),
+)
 
 winners = functions.get_race_winners(year)
 
