@@ -42,6 +42,6 @@ driver2_poles = functions.count_wins(driver2, pole_winners)
 # print(f'{driver1} wins in {year}: {driver1_wins}')
 # print(f'{driver2} wins in {year}: {driver2_wins}')
 
-st.write(f'{driver1} had {driver1_wins} wins in season {year}./n While {driver2} had {driver2_wins} wins.')
-st.write(f'{driver1} had {driver1_poles} pole positions in season {year}./n While {driver2} had {driver2_poles} wins.')
+st.write(f'{driver1} had {driver1_wins} wins in season {year}.\n While {driver2} had {driver2_wins} wins.\n\n')
+st.write(f'{driver1} had {driver1_poles} pole positions in season {year}.\n While {driver2} had {driver2_poles} pole positions.')
 
