@@ -1,6 +1,6 @@
 import streamlit as st
 import fastf1 as ff1
-import functions
+import utils
 import time
 
 ff1.Cache.enable_cache('./cache')
@@ -15,7 +15,7 @@ year = st.selectbox(
 st.write(f'SEASON {year}')
 
 if year != 'Select...':
-    drivers = functions.get_drivers(year)
+    drivers = utils.get_drivers(year)
 
 
 driver1 = st.selectbox(
@@ -33,16 +33,16 @@ driver2 = st.selectbox(
 if year != 'Select...' and driver1 != 'Select...' and driver2 != 'Select...':
     st.write(f"SEASON {year}: Comparing {driver1} vs {driver2}")
 
-    winners = functions.get_race_winners(year)
+    winners = utils.get_race_winners(year)
     time.sleep(0.5)
-    pole_winners = functions.get_pole_winners(year)
+    pole_winners = utils.get_pole_winners(year)
     time.sleep(0.5)
 
-    driver1_wins = functions.count_wins(driver1, winners)
-    driver2_wins = functions.count_wins(driver2, winners)
+    driver1_wins = utils.count_wins(driver1, winners)
+    driver2_wins = utils.count_wins(driver2, winners)
 
-    driver1_poles = functions.count_wins(driver1, pole_winners)
-    driver2_poles = functions.count_wins(driver2, pole_winners)
+    driver1_poles = utils.count_wins(driver1, pole_winners)
+    driver2_poles = utils.count_wins(driver2, pole_winners)
 
     # print(f'{driver1} had {driver1_wins} wins in season {year}.\n While {driver2} had {driver2_wins} wins.\n\n')
     # print(f'{driver1} had {driver1_poles} pole positions in season {year}.\n While {driver2} had {driver2_poles} pole positions.')
