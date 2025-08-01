@@ -20,7 +20,7 @@ def get_race_winners(year):
     return df
 
 # Returns total count of wins per racer
-def count_wins(racer, df):
-    total_wins = df['Winner'].value_counts()[racer]
+def count_wins(racer, winners):
+    total_wins = winners['Winner'].value_counts()[racer]
     return total_wins
 
