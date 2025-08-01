@@ -2,7 +2,7 @@ import fastf1 as ff1
 import pandas as pd
 from fastf1.ergast import Ergast
 
-ff1.Cache.enable_cache('your_cache_folder_path')
+ff1.Cache.enable_cache('./cache')
 
 ergast = Ergast()
 

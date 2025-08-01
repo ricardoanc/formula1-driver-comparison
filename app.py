@@ -2,7 +2,7 @@ import streamlit as st
 import fastf1 as ff1
 import functions
 
-ff1.Cache.enable_cache('your_cache_folder_path')
+ff1.Cache.enable_cache('./cache')
 
 year = st.selectbox(
     'Select the racing season:',
