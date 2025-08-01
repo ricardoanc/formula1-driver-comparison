@@ -11,7 +11,6 @@ def get_drivers(year):
     season_drivers = ergast.get_driver_info(season=year)['driverId'].drop_duplicates()
     return season_drivers
 
-
 # Just in case: get the list of all drivers from 1950 to 2024
 # def jic_full_drivers_list():
 #     drivers_list = []
