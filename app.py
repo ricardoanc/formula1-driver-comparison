@@ -25,8 +25,8 @@ driver2 = st.selectbox(
 
 winners = functions.get_race_winners(year)
 
-# driver1_wins = functions.count_wins(driver1, winners)
-# driver2_wins = functions.count_wins(driver2, winners)
+driver1_wins = functions.count_wins(driver1, winners)
+driver2_wins = functions.count_wins(driver2, winners)
 
 # print(f'{driver1} wins in {year}: {driver1_wins}')
 # print(f'{driver2} wins in {year}: {driver2_wins}')
