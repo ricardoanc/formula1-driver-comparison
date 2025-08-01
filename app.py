@@ -14,8 +14,8 @@ year = st.selectbox(
 
 st.write(f'SEASON {year}')
 
-
-drivers = functions.get_drivers(year)
+if year:
+    drivers = functions.get_drivers(year)
 
 
 driver1 = st.selectbox(
