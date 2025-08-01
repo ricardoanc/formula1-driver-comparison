@@ -1,0 +1,24 @@
+import fastf1 as ff1
+import pandas as pd
+from fastf1.ergast import Ergast
+
+ergast = Ergast()
+
+# Returns a list of the winner of each race given the season
+def get_race_winners(year):
+    schedule = ergast.get_race_schedule(season=year)
+    
+    df = pd.DataFrame(columns=['Circuit', 'Winner'])
+
+    for i, round_number in enumerate(schedule['round'], start=1):
+        winner_code = ergast.get_driver_info(season=year, round=round_number, results_position=1)['driverCode'].iloc[0]
+        circuit = schedule[schedule['round'] == round_number]['circuitId'].iloc[0]
+
+        df = pd.concat([df, pd.DataFrame([{'Circuit': circuit, 'Winner': winner_code}])], ignore_index=True)
+    return df
+
+# Returns total count of wins per racer
+def count_wins(racer, df):
+    total_wins = df['Winner'].value_counts()[racer]
+    return total_wins
+
